@@ -1,1 +1,4 @@
 # JSON-Parsing
+
+Il parser JSON in Common Lisp effettua come prima operazione una rimozione di tutti gli spazi (esclusi quelli presenti nelle stringhe). Questa operazione è possibile solo se non sono presenti spazi tra i numeri, in tal caso genera un errore.
+La funzione json-parse crea la lista iniziale (json-obj oppure json-array a seconda dell'oggetto passato) e chiama la funzione appropriata. In caso di un oggetto la parse-members riconosce le singole coppie e le unisce. Nel caso di un array invece viene usata la funzione parse-elements. La funzione che riconosce i singoli valori è la parse-value.
